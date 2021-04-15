@@ -158,6 +158,7 @@ public class Address_Book{
         Address_Book person3=new Address_Book();
         Address_Book person4=new Address_Book();
 
+
         //for adding the contacts
         Scanner i=new Scanner(System.in);
         System.out.println("Press 1 to Enter the contact details\nPress 2 for exit");
@@ -166,8 +167,9 @@ public class Address_Book{
         {
             case 1://adding person 1
                 person1.details();//calling the details method using the object
-                System.out.println(person1.toString());//calling the toString method
                 list.add(person1);//adding the details to the ArrayList
+                System.out.println(person1.toString());//calling the toString method
+
 
                 Scanner j=new Scanner(System.in);
                 System.out.println("Press 1 for adding another details\nPress 2 for exit");
@@ -178,6 +180,7 @@ public class Address_Book{
                     case 1: //adding person 2
                         person2.details();
                         list.add(person2);
+                        System.out.println(person2.toString());
                         Scanner k=new Scanner(System.in);
                         System.out.println("Press 1 for adding another details\nPress 2 for exit");
                         int optk=k.nextInt();
@@ -186,6 +189,7 @@ public class Address_Book{
                             case 1://adding person 3
                                 person3.details();
                                 list.add(person3);
+                                System.out.println(person3.toString());
                                 System.out.println("Press 1 for adding another details\nPress 2 for exit");
                                 Scanner l=new Scanner(System.in);
                                 int optl=l.nextInt();
@@ -194,6 +198,7 @@ public class Address_Book{
                                     case 1: //adding person 4
                                         person4.details();
                                         list.add(person4);
+                                        System.out.println(person4.toString());
                                         break;
                                     default:
                                         break;
@@ -227,29 +232,73 @@ public class Address_Book{
                     person1.editDetails();
                     person1.toString();
                     list.set(0, person1);
+                    System.out.println(person1.toString());
                 }
                 else if(person1.getName().equals(optm))//for editing person 2 using name
                 {
                     person2.editDetails();
                     person2.toString();
                     list.set(1, person2);
+                    System.out.println(person2.toString());
                 }
                 else if(person3.getName().equals(optm))//for editing person 3 using name
                 {
                     person3.editDetails();
                     person3.toString();
                     list.set(2, person3);
+                    System.out.println(person3.toString());
                 }
                 else if(person4.getName().equals(optm))//for editing person 4 using name
                 {
                     person4.editDetails();
                     person4.toString();
                     list.set(3, person4);
+                    System.out.println(person4.toString());
                 }
                 else {
                     break;
                 }
                 break;
+
+            default:
+                break;
+        }
+
+        //for deleting a provided contact
+        System.out.println("Press 1 for deleting a particular contact\n Press 2 for exit");
+        Scanner delete=new Scanner(System.in);
+        int deletion=delete.nextInt();
+        switch(deletion)
+        {
+            case 1:
+                System.out.println("Enter the first name of the contact for deletion\n or press exit for exit");
+                Scanner del=new Scanner(System.in);
+                String dele=del.nextLine();
+
+                if(person1.getName().equals(dele))
+                {
+                    list.remove(person1);
+                }
+                else if(person2.getName().equals(dele))
+                {
+                    list.remove(person2);
+                }
+                else if(person3.getName().equals(dele))
+                {
+                    list.remove(person3);
+                }
+                else if(person3.getName().equals(dele))
+                {
+                    list.remove(person3);
+                }
+                else if(person4.getName().equals(dele))
+                {
+                    list.remove(person4);
+                }
+                else
+                {
+                    break;
+                }
 
             default:
                 break;
